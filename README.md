@@ -3,7 +3,6 @@
 > A lightweight graphical control and debugging tool for the Inspire Robots RH56 dexterous hand.  
 > This project is implemented with Python, Tkinter, and PySerial, and is designed for serial communication, parameter tuning, real-time state readback, and action sequence triggering.
 
-![GUI Screenshot](docs/screenshot.png)
 
 ## 1. Overview
 
