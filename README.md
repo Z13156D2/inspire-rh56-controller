@@ -335,41 +335,10 @@ The expected response header is:
 
 The program checks both the packet header and checksum. Invalid packets are discarded.
 
-## 10. Recommended Repository Structure
 
-A simple repository structure is:
+## 10. Troubleshooting
 
-```text
-inspire-rh56-gui-controller/
-├── README.md
-├── README_EN.md
-├── requirements.txt
-├── rh56_gui_controller.py
-├── docs/
-│   └── screenshot.png
-├── examples/
-│   └── basic_usage.md
-└── LICENSE
-```
-
-If the project grows, it can be refactored into modules:
-
-```text
-inspire-rh56-gui-controller/
-├── rh56/
-│   ├── __init__.py
-│   ├── controller.py
-│   ├── gui.py
-│   └── registers.py
-├── main.py
-├── README.md
-├── README_EN.md
-└── requirements.txt
-```
-
-## 11. Troubleshooting
-
-### 11.1 No Serial Port Found
+### 10.1 No Serial Port Found
 
 Please check:
 
@@ -386,7 +355,7 @@ sudo usermod -aG dialout $USER
 
 Then log out and log back in.
 
-### 11.2 Connection Failed
+### 10.2 Connection Failed
 
 Possible causes include:
 
@@ -397,7 +366,7 @@ Possible causes include:
 - Incorrect wiring;
 - Device not powered on.
 
-### 11.3 The Hand Does Not Move After Writing Commands
+### 10.3 The Hand Does Not Move After Writing Commands
 
 Check the following:
 
@@ -408,7 +377,7 @@ Check the following:
 - No error code or current-protection status is active;
 - The power supply is sufficient.
 
-### 11.4 Readback Fails or Is Unstable
+### 10.4 Readback Fails or Is Unstable
 
 Readback instability may be caused by:
 
@@ -425,7 +394,7 @@ CONFIG["poll_interval_ms"] = 500
 CONFIG["serial_timeout"] = 0.3
 ```
 
-### 11.5 No Flash-Save Result Frame
+### 10.5 No Flash-Save Result Frame
 
 The program waits for a save-result frame after `SAVE=1`. If no response is received, possible reasons include:
 
@@ -436,7 +405,7 @@ The program waits for a save-result frame after `SAVE=1`. If no response is rece
 
 Try saving again or increasing the `wait_s` argument in `save_to_flash()`.
 
-## 12. Future Improvements
+## 11. Future Improvements
 
 Possible future extensions:
 
@@ -451,10 +420,10 @@ Possible future extensions:
 - Support multiple RH56 hands;
 - Provide packaging scripts for generating a Windows `.exe`.
 
-## 13. License
+## 12. License
 
 MIT License is recommended for open-source release. Please add a `LICENSE` file before publishing the repository.
 
-## 14. Disclaimer
+## 13. Disclaimer
 
 This project is a research and debugging tool for the RH56 dexterous hand and is not official software from Inspire Robots. When controlling real hardware, always follow the device manual and laboratory safety rules. The user is responsible for any hardware damage, safety risk, or unexpected behavior caused by incorrect wiring, inappropriate parameters, abnormal commands, or improper use.
