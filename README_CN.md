@@ -331,41 +331,10 @@ CONFIG = {
 
 并通过校验和验证回包完整性。若包头或校验和不正确，程序会丢弃该数据包。
 
-## 10. 推荐项目结构
 
-建议将仓库整理为以下结构：
+## 10. 常见问题
 
-```text
-inspire-rh56-gui-controller/
-├── README.md
-├── README_EN.md
-├── requirements.txt
-├── rh56_gui_controller.py
-├── docs/
-│   └── screenshot.png
-├── examples/
-│   └── basic_usage.md
-└── LICENSE
-```
-
-如果后续项目变复杂，也可以拆分为：
-
-```text
-inspire-rh56-gui-controller/
-├── rh56/
-│   ├── __init__.py
-│   ├── controller.py
-│   ├── gui.py
-│   └── registers.py
-├── main.py
-├── README.md
-├── README_EN.md
-└── requirements.txt
-```
-
-## 11. 常见问题
-
-### 11.1 找不到串口怎么办？
+### 10.1 找不到串口怎么办？
 
 请检查：
 
@@ -382,7 +351,7 @@ sudo usermod -aG dialout $USER
 
 然后重新登录系统。
 
-### 11.2 点击连接失败怎么办？
+### 10.2 点击连接失败怎么办？
 
 可能原因包括：
 
@@ -393,7 +362,7 @@ sudo usermod -aG dialout $USER
 - 硬件连接异常；
 - 设备未上电。
 
-### 11.3 写入后灵巧手没有动作怎么办？
+### 10.3 写入后灵巧手没有动作怎么办？
 
 请检查：
 
@@ -404,7 +373,7 @@ sudo usermod -aG dialout $USER
 - 是否存在故障码或电流保护状态；
 - 设备供电是否满足要求。
 
-### 11.4 自动回读失败怎么办？
+### 10.4 自动回读失败怎么办？
 
 自动回读失败通常与以下因素有关：
 
@@ -421,7 +390,7 @@ CONFIG["poll_interval_ms"] = 500
 CONFIG["serial_timeout"] = 0.3
 ```
 
-### 11.5 保存到 Flash 没有结果帧怎么办？
+### 10.5 保存到 Flash 没有结果帧怎么办？
 
 程序会等待设备返回保存结果帧。如果超时未收到，可能是：
 
@@ -432,7 +401,7 @@ CONFIG["serial_timeout"] = 0.3
 
 可尝试重新保存，或增大 `save_to_flash()` 的 `wait_s` 参数。
 
-## 12. 后续开发建议
+## 11. 后续开发建议
 
 可以进一步扩展以下功能：
 
@@ -447,10 +416,10 @@ CONFIG["serial_timeout"] = 0.3
 - 支持多只 RH56 灵巧手同时控制；
 - 增加打包脚本，生成 Windows `.exe` 程序。
 
-## 13. 许可证
+## 12. 许可证
 
 建议使用 MIT License 开源本项目。正式发布前，请在仓库中添加 `LICENSE` 文件。
 
-## 14. 免责声明
+## 13. 免责声明
 
 本项目为 RH56 灵巧手的串口调试和科研实验辅助工具，并非官方软件。使用本项目控制真实硬件时，请务必遵守设备手册和实验室安全规范。因错误接线、错误参数、异常控制指令或不当使用造成的设备损坏或安全风险，需由使用者自行承担。
